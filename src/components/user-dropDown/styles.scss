@@ -1,0 +1,48 @@
+@import "../../variables.scss";
+
+.dropdown_wrapper {
+  position: relative;
+
+  .drop_menu {
+    font-size: 20px;
+    color: $text_color;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    background: $bg_color;
+    box-shadow: 0 0 10px $box_shadow;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    right: 5px;
+
+    &.active {
+      display: flex;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      font-size: 14px;
+      text-transform: capitalize;
+      color: $text_color_alt;
+      transition: 0.4s ease;
+
+      &:hover {
+        color: $text_color;
+      }
+
+      span {
+        padding-top: 5px;
+      }
+    }
+  }
+}

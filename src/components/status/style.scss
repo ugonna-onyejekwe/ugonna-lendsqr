@@ -1,0 +1,30 @@
+.status {
+  padding: 5px;
+  text-transform: capitalize;
+  font-size: 14px;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.pending {
+    color: #f0cc56;
+    background: #fdf7e5;
+  }
+
+  &.inactive {
+    color: #545f7d;
+    background: #f5f5f7;
+  }
+
+  &.blacklisted {
+    color: #e4033b;
+    background: #fce6eb;
+  }
+
+  &.active {
+    color: #44d06b;
+    background: #f3fcf6;
+  }
+}

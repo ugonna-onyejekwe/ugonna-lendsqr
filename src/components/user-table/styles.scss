@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.table_wrapper {
+  margin-top: 50px;
+  border: 1px solid rgb(240, 237, 237);
+  width: 100%;
+  overflow-x: scroll;
+
+  .table {
+    background: white !important;
+
+    td,
+    th {
+      background: white !important;
+      color: $text_color !important;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .table_con {
+    min-width: fit-content;
+    width: 100%;
+  }
+}

@@ -1,0 +1,148 @@
+@import "../../variables.scss";
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 0 10px $box_shadow;
+  padding: 120px 0 30px 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .close_btn {
+    display: none;
+  }
+
+  h3 {
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 500;
+    color: grey;
+    padding-left: 30px;
+
+    &.heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: $text_color;
+      font-size: 16px;
+      cursor: pointer;
+
+      span {
+        fill: $text_color;
+        padding-top: 4px;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: $text_color_alt;
+      text-decoration: none;
+      text-transform: capitalize;
+      font-size: 15px;
+      transition: 0.4s ease;
+      width: 100%;
+      padding: 15px 0 15px 30px;
+      position: relative;
+
+      background: transparent;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        background: transparent;
+        left: 0;
+      }
+
+      &:hover,
+      &.active {
+        padding: 15px 0 15px 40px;
+        color: $text_color;
+        background: rgba(57, 205, 205, 0.085);
+
+        span {
+          fill: $text_color;
+        }
+
+        &::before {
+          background: rgba(57, 205, 204, 1);
+        }
+      }
+
+      span {
+        padding-top: 5px;
+        font-size: 15px;
+        fill: $text_color_alt;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    transform: translateX(-110%);
+    transition: 0.4s ease;
+    z-index: 200;
+    padding: 20px 0 30px 0;
+
+    &.active {
+      transform: translateX(0);
+    }
+
+    .close_btn {
+      display: block;
+      width: 100%;
+      display: flex;
+      justify-content: right;
+      padding-right: 60px;
+      cursor: pointer;
+      color: $text_color;
+    }
+  }
+}
+
+.overlay {
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    position: fixed;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.4s ease;
+
+    &.active {
+      opacity: 0.5;
+      pointer-events: all;
+      visibility: visible;
+    }
+  }
+}

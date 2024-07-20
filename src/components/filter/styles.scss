@@ -1,0 +1,78 @@
+@import "../../variables.scss";
+
+.filter_con {
+  padding: 30px 15px 15px 15px;
+  border-radius: 5px;
+  background: $bg_color;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 300px;
+
+  .box_con {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      label {
+        text-transform: capitalize;
+        font-size: 15px;
+        color: $text_color_alt;
+        font-weight: 500;
+      }
+
+      input,
+      select {
+        padding: 15px;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid rgb(173, 173, 173);
+        width: 100%;
+
+        &::placeholder {
+          color: grey;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  .btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+
+    button {
+      text-transform: capitalize;
+      font-size: 15px;
+      padding: 15px 30px;
+      border-radius: 5px;
+      background: transparent;
+      outline: none;
+      cursor: pointer;
+      opacity: 0.9;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:first-child {
+        border: 1px solid rgb(190, 188, 188);
+        color: grey;
+      }
+
+      &:last-child {
+        border: none;
+        background: $primary_color;
+        color: white;
+      }
+    }
+  }
+}

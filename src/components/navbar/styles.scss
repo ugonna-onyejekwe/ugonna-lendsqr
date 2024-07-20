@@ -1,0 +1,181 @@
+@import "../../variables.scss";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: $bg_color;
+  box-shadow: 0 0 10px $box_shadow;
+  z-index: 50;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      min-width: 80px;
+      width: 80px;
+      display: block;
+
+      .logo_icon {
+        display: none;
+      }
+    }
+
+    .search_con {
+      border: 1px solid rgb(235, 231, 231);
+      max-width: 400px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      overflow: hidden;
+
+      input {
+        width: 100%;
+        font-size: 13px;
+        padding: 0 10px;
+        border: none;
+        outline: none;
+
+        &::placeholder {
+          color: rgb(178, 176, 176);
+        }
+      }
+
+      button {
+        padding: 12px 20px;
+        border-radius: none;
+        border: none;
+        outline: none;
+        color: white;
+        background: $primary_color;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+
+    .navigators {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      .search_btn {
+        font-size: 20px;
+        color: $text_color;
+        padding-top: 5px;
+        cursor: pointer;
+        display: none;
+      }
+
+      a {
+        text-transform: capitalize;
+        font-weight: 500;
+        color: $text_color;
+
+        &.docs {
+          font-size: 15px;
+        }
+
+        &.notification {
+          font-size: 20px;
+          padding-top: 5px;
+        }
+      }
+
+      .user_section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+
+        .avatar {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+
+        h4 {
+          display: flex;
+          align-items: center;
+          text-transform: capitalize;
+          font-weight: 500;
+          color: $text_color;
+
+          span {
+            margin-top: 3px;
+          }
+        }
+      }
+
+      .menu_btn {
+        display: none;
+
+        @media (max-width: 1024px) {
+          display: block;
+          font-size: 20px;
+          color: $text_color;
+          cursor: pointer;
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      &.isSearching {
+        .logo {
+          display: none;
+        }
+
+        .search_con {
+          display: flex;
+          max-width: 100%;
+        }
+
+        .navigators {
+          display: none;
+        }
+      }
+
+      .logo {
+        display: block;
+      }
+      .search_con {
+        display: none;
+      }
+
+      .navigators {
+        display: flex;
+        gap: 20px;
+
+        .search_btn {
+          display: block;
+        }
+
+        .user_section h4 {
+          display: none;
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      .logo {
+        min-width: fit-content;
+        .logo_img {
+          display: none;
+        }
+
+        .logo_icon {
+          display: block;
+          width: 30px;
+        }
+      }
+    }
+  }
+}
