@@ -15,6 +15,7 @@ export const UsersDetailsPage = () => {
 
   const user: userType = users.find((i: userType) => i.userId === id);
 
+  console.log(user);
   return (
     <section className="user_details_Page">
       <div className="back_btn">
@@ -66,7 +67,7 @@ export const UsersDetailsPage = () => {
           </div>
 
           <div className="acct_bal_section  box">
-            <h3>$00000000</h3>
+            <h3>${user.acctBalance}</h3>
             <p>
               <span>{user.accountNumber}</span>/<span>{user.bank}</span>
             </p>

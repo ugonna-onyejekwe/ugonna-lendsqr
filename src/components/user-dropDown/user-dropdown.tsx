@@ -12,11 +12,7 @@ export const UserDropDown = ({ id }: { id: string }) => {
     <div className="dropdown_wrapper">
       <p
         className="drop_menu"
-        onClick={(e) => {
-          //   const button = e.target;
-          //   window.addEventListener("click", (e) => {
-          //     button === e.target ? null : setIsActive(false);
-          //   });
+        onClick={() => {
           setIsActive(!isActive);
         }}
       >

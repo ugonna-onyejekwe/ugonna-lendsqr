@@ -9,25 +9,35 @@ import { FilterDropdown } from "../filter";
 
 export const UsersTable = () => {
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const getAllUsers = async () => {
-      const storedUsers = localStorage.getItem("allUsers");
+    setIsLoading(true);
+    try {
+      const getAllUsers = async () => {
+        const storedUsers = localStorage.getItem("allUsers");
+        const parsedData = storedUsers ? JSON.parse(storedUsers) : [];
 
-      if (storedUsers?.length === 0 || !storedUsers) {
-        // fetchusers
-        const response = await fetchedUsers();
-        setUsers(response);
-      } else {
-        setUsers(storedUsers ? JSON.parse(storedUsers) : []);
-      }
-    };
+        if (parsedData?.length === 0 || !parsedData) {
+          // fetchusers
+          const response = await fetchedUsers();
+          setUsers(response);
+        } else {
+          setUsers(parsedData);
+        }
+      };
 
-    getAllUsers();
+      getAllUsers();
+    } catch (error) {
+      console.log(error);
+    }
+    setIsLoading(false);
   }, []);
 
   const filter_Dropdown = (): TableColumnType<userTableDataType> => ({
-    filterDropdown: () => <FilterDropdown updateUsers={setUsers} />,
+    filterDropdown: ({ close }) => (
+      <FilterDropdown close={close} updateUsers={setUsers} />
+    ),
     filterIcon: () => <DropDown />,
   });
 
@@ -106,7 +116,12 @@ export const UsersTable = () => {
   return (
     <div className="table_wrapper">
       <div className="table_con">
-        <Table className="table" columns={columns} dataSource={users} />
+        <Table
+          className="table"
+          loading={isLoading}
+          columns={columns}
+          dataSource={users}
+        />
       </div>
     </div>
   );

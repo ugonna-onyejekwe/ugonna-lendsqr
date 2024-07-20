@@ -9,6 +9,7 @@ export const fetchedUsers = async () => {
     );
     const stringifyUsers = JSON.stringify(res.data);
     localStorage.setItem("allUsers", stringifyUsers);
+    console.log(res.data);
     return res.data;
   } catch (error) {
     console.log(error);

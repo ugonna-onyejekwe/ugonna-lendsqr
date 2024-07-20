@@ -15,9 +15,12 @@ export const togglerSlice = createSlice({
     toggle: (state) => {
       state.value = state.value === true ? false : true;
     },
+    data: (state) => {
+      state.value = state.value === true ? false : true;
+    },
   },
 });
 
-export const { toggle } = togglerSlice.actions;
+export const { toggle, data } = togglerSlice.actions;
 
 export default togglerSlice.reducer;

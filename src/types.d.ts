@@ -19,6 +19,7 @@ interface userType {
   firstName: string;
   fullName: string;
   gender: string;
+  acctBalance: number;
   guarantors: {
     email: string;
     fullName: string;
@@ -65,4 +66,13 @@ interface userTableDataType {
   status: string;
   phoneNumber: string;
   userId: string;
+}
+
+interface FiltersInputType {
+  name: string;
+  email: string;
+  organization: string;
+  date: string;
+  phoneNumber: string;
+  status: string;
 }
