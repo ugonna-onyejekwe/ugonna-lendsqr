@@ -28,6 +28,7 @@ interface userType {
   }[];
 
   instaHandle: string;
+  facebookHandle: string;
   lastName: string;
   levelOfEducation: string;
   loanRepayment: number;

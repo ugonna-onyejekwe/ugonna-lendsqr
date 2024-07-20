@@ -67,7 +67,7 @@ export const UsersDetailsPage = () => {
           </div>
 
           <div className="acct_bal_section  box">
-            <h3>${user.acctBalance}</h3>
+            <h3>${user.acctBalance.toLocaleString()}</h3>
             <p>
               <span>{user.accountNumber}</span>/<span>{user.bank}</span>
             </p>
@@ -144,12 +144,13 @@ export const UsersDetailsPage = () => {
             <div className="box">
               <span>monthly incone</span>
               <p>
-                {user.monthlyIncome.min} - {user.monthlyIncome.max}
+                {Number(user.monthlyIncome.min).toLocaleString()} -{" "}
+                {Number(user.monthlyIncome.max).toLocaleString()}
               </p>
             </div>
             <div className="box">
               <span>loan repayment</span>
-              <p>{user.loanRepayment}</p>
+              <p>{user.loanRepayment.toLocaleString()}</p>
             </div>
           </div>
         </section>
@@ -163,7 +164,7 @@ export const UsersDetailsPage = () => {
             </div>
             <div className="box">
               <span>facebook</span>
-              <p>{}</p>
+              <p>{user.facebookHandle}</p>
             </div>
 
             <div className="box">
