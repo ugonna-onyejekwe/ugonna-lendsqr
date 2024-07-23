@@ -1,11 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./style.scss";
 import { loginbg, logo } from "../../assets";
 import { loginValidation } from "../../model/validate-schema";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 
-export const LoginPage = () => {
+export const LoginPage = (): React.ReactNode => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const onSubmit = () => {
@@ -77,7 +77,7 @@ export const LoginPage = () => {
 
         <h6>forgot password?</h6>
 
-        <button>log in</button>
+        <button>login</button>
       </form>
     </section>
   );
