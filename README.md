@@ -1,30 +1,66 @@
-# React + TypeScript + Vite
+# Lendsqr-fe-test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was crafted using
 
-Currently, two official plugins are available:
+- React,
+- Typescript and
+- SCSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was scaffolded using `vite`
+The data consumed was pulled from a mock Api`(json-generator.com)`
 
-## Expanding the ESLint configuration
+## Installation:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To get the app running on your local, firstly
 
-- Configure the top-level `parserOptions` property like this:
+- Clone the repository and navigate into the project directory,
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Run npm to install all dependency used,
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+  ```
+  npm install
+  ```
+
+- Run npm dev to get the app running on your local(http://localhost:5173/)
+  ```
+  npm dev
+  ```
+
+The app is up and running.
+
+## Folder Structure:
+
+All the working file of this app can be found in the `src` folder.
+
+- The `api(folder)` where I implemented all the api configuration used in the app
+
+- The `assets(folder)` which consist of Icon(file) and image(file)
+
+- The `componets(folder)` which consist off all reusable component used around the project and api calls
+
+- The `page(folder)` which consist of all the pages of the project
+
+- The `types(file)` which consist of all the types used in this project
+
+- The `utils(folder)` which contains my redux-toolkit configuration for this project.
+
+- The `model(folder)` which contains my yup vaidation schema for this project.
+
+- The `mockup-data(folder)` which contains some data which i map through to create some components.
+
+- The `__test__(folder)` which contain my test.
+
+## Git Structure
+
+    all console.log, unused variables and commented out codes must be removed before you push
+
+    Check into the master branch and pull before you checkout into your own branch.
+    choose your own branch names that describes what you worked on and add a prefix to it.
+
+          * feat : when it is a new feature (e.g feat/buttonComp)
+          * fix: when you are making fixes to a particular feature (e.g fix/loginPage)
+          * ref: when you are making a refactor
+
+## Deployment
+
+The app is deployed using vercel and can be accessed via [lendsqr-fe-test](https://onyejekwe-ugonna-lendsqr-fe-test.vercel.app/)
